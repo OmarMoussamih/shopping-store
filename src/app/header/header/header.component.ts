@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  @Output() toggleMenu = new EventEmitter<string>();
+
+  onSelectMenuItem(feature) {
+    this.toggleMenu.emit(feature);
+  }
 }
+ 
